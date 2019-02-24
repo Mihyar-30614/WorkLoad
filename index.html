@@ -4,13 +4,59 @@
 <head>
 	<title>WorkLoad</title>
 	<link rel="stylesheet" href="./style/bootstrap.min.css">
+	<link rel="stylesheet" href="./style/base.css">
 </head>
 
-<body>
+<body onload="ShowMain()">
+	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">Work Load</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03"
+			aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarsExample03">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active" id="HomeLink">
+					<a class="nav-link" href="#" onclick="ShowMain()">Home </a>
+				</li>
+				<li class="nav-item" id="TodoLink">
+					<a class="nav-link" href="#" onclick="ShowTodo()">Todo List</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div id="TodoSection">
+		<section id="todoapp">
+			<header id="header">
+				<h1>Todo List</h1>
+				<input id="new-todo" placeholder="What needs to be done?" autofocus>
+			</header>
+			<section id="main">
+				<ul id="todo-list"></ul>
+			</section>
+			<footer id="footer">
+				<span id="todo-count"></span>
+				<div id="sync-wrapper">
+					<div id="sync-success">Currently syncing</div>
+					<div id="sync-error">There was a problem syncing</div>
+				</div>
+			</footer>
+		</section>
+		<footer id="info">
+			<p>Double-click to edit a todo</p>
+		</footer>
+	</div>
+	<div id="MainSection">
+		<p>This is Main Section</p>
+	</div>
+
 	<script src="./js/pouchdb.min.js"></script>
 	<script src="./js/jquery-3.3.1.slim.min.js"></script>
 	<script src="./js/popper.min.js"></script>
 	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/todo.js"></script>
+	<script src="./js/app.js"></script>
 </body>
 
 </html>
